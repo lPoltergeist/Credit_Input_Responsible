@@ -9,6 +9,7 @@ text-transform: uppercase;
 font-size: 0.8rem;
 font-weight: 600;
 
+
 @media screen and (max-width: 1000px) {
     flex-direction: column;
     display: flex;
@@ -19,8 +20,15 @@ aside {
     background-image: url(bg-main-desktop.png);
 
     @media screen and (max-width: 1000px) {
+        background: linear-gradient(126deg, rgba(52,0,78,1) 20%, 
+        rgba(93,2,98,1) 41%, rgba(48,3,94,1) 100%);
+        height: 300px;
+        width: 100%;
+    }
+
+    @media screen and (max-width: 500px) {
         background-image: url(bg-main-mobile.png);
-        height: 400px;
+        height: 240px;
     }
 }
 
@@ -38,6 +46,17 @@ input {
     }  
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 button {
     background-color: #2d0056;
     border-radius: 8px;
@@ -46,75 +65,48 @@ button {
     margin-top: 2rem;
     color: #fff;
     font-size: 1rem;
+
+    transition: ease-in-out 0.5s;
+
+    @media screen and (max-width: 400px) {
+        width: 20rem;
+}
+
+&:hover {
+    background: rgba(93,2,98,1);
+}
 }`
 
-export const FrontCreditCard = styled.div`
-position: absolute;
-left: 10rem;
-top: 11rem;
-color: #fff;
-transition: ease-out 1s;
-
-.logocard {
+export const CreditCardStyle = styled.div`
+@media screen and (max-width: 1000px) {
     position: absolute;
-    left: 3rem;
-    top: 1.5rem;
-    
+    bottom: 65rem;
+    left: 12rem;
 }
 
-.number {
-    position: absolute;
-    left: 3rem;
-    top: 9rem;
-    font-size: 2rem;
-}
-
-.name {
-    position: absolute;
-    left: 3rem;
-    top: 12.6rem;
-    font-size: 0.8rem;
-}
-
-.date {
-    position: absolute;
-    left: 22rem;
-    top: 12.6rem;
-    font-size: 0.8rem;
-}
-
-@media screen and (max-width: 1400px) {
-    left: 5rem;
-}
-
-
-`
-export const BackCreditCard = styled.div`
-position: absolute;
-left: 17rem;
-top: 28rem;
-transition: ease-out 1s;
-
-.cvc {
-    position: absolute;
-    left: 22rem;
-    top: 7rem;
-    font-size: 1rem;
-    color: #fff;
-}
-
-@media screen and (max-width: 1400px) {
-    left: 5rem;
-}
 `
 
 export const CardDetails= styled.main`
 padding: 0 32px;
 margin: auto;
+
+@media screen and (max-width: 1000px) {
+    margin-top: 16rem;
+}
+
+@media screen and (max-width: 500px) {
+    margin-top: 10rem;
+}
+
+
 `
-export const CardInfo = styled.div`
+export const CardInfo = styled.form`
 display: flex;
 flex-direction: column;
+
+@media screen and (max-width: 400px) {
+   
+}
 
 span {
     margin: 20px 0 4px 0;
@@ -142,6 +134,10 @@ max-width: 25rem;
 .cvc{
     input { 
         width: 13rem;
+
+        @media screen and (max-width: 400px) {
+            width: 6.5rem;
+}
     }
 }
 }
